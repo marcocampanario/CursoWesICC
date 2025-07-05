@@ -17,8 +17,8 @@ sections:
         url: /CursoWesICC/docs/
         icon: 🧬
       secondary_action:
-        text: Read the docs
-        url: /CursoWesICC/docs/
+        text: Sobre os autores
+        url: /CursoWesICC/showcase/
       announcement:
         text: "Para download dos datasets de estudo."
         link:
@@ -61,27 +61,27 @@ sections:
   - block: features
     id: features
     content:
-      title: Features
-      text: Collaborate, publish, and maintain technical knowledge with an all-in-one documentation site. Used by 100,000+ startups, enterprises, and researchers.
+      title: Conteúdo
+      text: Conteúdo programático abordado no curso. (v2025-07.1)
       items:
-        - name: Optimized SEO
+        - name: Estrutura FASTQ
           icon: magnifying-glass
-          description: Automatic sitemaps, RSS feeds, and rich metadata take the pain out of SEO and syndication.
-        - name: Fast
+          description: Estrutura do arquivo de leituras (FASTQ).
+        - name: QC pré-mapeamento
           icon: bolt
-          description: Super fast page load with Tailwind CSS and super fast site building with Hugo.
-        - name: Easy
+          description: Controle de qualidade de arquivos de leituras (FASTQ) nos programas FastQC/MultiQC.
+        - name: Estrutura VCF
           icon: sparkles
-          description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!
-        - name: No-Code
+          description: Estrutura do arquivo de chamada de variantes genéticas (VCF).
+        - name: Exploração de dados em VCF 
           icon: code-bracket
-          description: Edit and design your site just using rich text (Markdown) and configurable YAML parameters.
-        - name: Highly Rated
+          description: Interpretação das informações contidas em um VCF anotado.
+        - name: Visualização de dados em VCF
           icon: star
-          description: Rated 5-stars by the community.
-        - name: Swappable Blocks
+          description: Aplicação de pacotes de visualização de dados no R para análise de variantes genéticas.
+        - name: Exploração genômica orientada por hipóteses
           icon: rectangle-group
-          description: Build your pages with blocks - no coding required!
+          description: Delineamento experimental com base em hipóteses biológicas.
   - block: cta-card
     content:
       title: "Start Writing with the #1 Effortless Documentation Platform"
