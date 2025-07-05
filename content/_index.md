@@ -37,27 +37,6 @@ sections:
           filename: ""
           filters:
             brightness: 0.5
-  - block: stats
-    content:
-      items:
-        - statistic: "1M+"
-          description: |
-            Websites built  
-            with Hugo Blox
-        - statistic: "10k+"
-          description: |
-            GitHub stars  
-            since 2016
-        - statistic: "3k+"
-          description: |
-            Discord community  
-            for support
-    design:
-      # Section background color (CSS class)
-      css_class: "bg-gray-100 dark:bg-gray-800"
-      # Reduce spacing
-      spacing:
-        padding: ["1rem", 0, "1rem", 0]
   - block: features
     id: features
     content:
@@ -82,16 +61,4 @@ sections:
         - name: Exploração genômica orientada por hipóteses
           icon: rectangle-group
           description: Delineamento experimental com base em hipóteses biológicas.
-  - block: cta-card
-    content:
-      title: "Start Writing with the #1 Effortless Documentation Platform"
-      text: Hugo Blox Docs Theme brings all your technical knowledge together in a single, centralized knowledge base. Easily search and edit it with the tools you use every day!
-      button:
-        text: Get Started
-        url: https://hugoblox.com/templates/details/docs/
-    design:
-      card:
-        # Card background color (CSS class)
-        css_class: "bg-primary-700"
-        css_style: ""
 ---
