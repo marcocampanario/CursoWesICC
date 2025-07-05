@@ -39,7 +39,7 @@ Exemplo:
 `AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ`
 
 
-[Configure your site name, description, and menu.](https://docs.hugoblox.com/tutorial/blog/)
+[Artigo que sistematizou a estrutura do arquivo FASTQ](https://academic.oup.com/nar/article/38/6/1767/3112533)
 
 ### FastQC
 
@@ -72,7 +72,7 @@ O FastQC analisa um ou mais arquivos FASTQ e produz um relatório HTML com gráf
 
 Cada métrica é sinalizada com um status (**Normal**, **Aviso** ou **Falha**), facilitando a identificação de áreas problemáticas.
 
-[Edit the homepage and add your documentation pages.](https://docs.hugoblox.com/tutorial/blog/)
+[Documentação detalhada do FastQC.](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
 ### MultiQC
 
@@ -96,7 +96,7 @@ O MultiQC é uma ferramenta que agrega e sumariza os relatórios de controle de 
 - **Suporte a Múltiplas Ferramentas:**  
   Além do FastQC, o MultiQC pode integrar resultados de outras etapas do pipeline, como o mapeamento (BWA-MEM), o processamento de BAM (SAMtools), e a chamada de variantes (GATK), fornecendo uma visão holística do controle de qualidade de todo o fluxo de trabalho.
 
-[Easily publish your site for free with GitHub Pages](https://docs.hugoblox.com/tutorial/blog/)
+[Documentação detalhada do MultiQC](https://docs.seqera.io/multiqc)
 
 {{% /steps %}}
 
