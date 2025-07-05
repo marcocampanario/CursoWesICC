@@ -1,6 +1,6 @@
 ---
-title: 'Home'
-date: 2023-10-24
+title: 'Curso de Genômica Humana'
+date: 2025
 type: landing
 
 design:
