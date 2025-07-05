@@ -15,7 +15,7 @@ sections:
       primary_action:
         text: Comece aqui
         url: /CursoWesICC/docs/
-        icon: dna
+        icon: 🧬
       secondary_action:
         text: Read the docs
         url: /CursoWesICC/docs/
