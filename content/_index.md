@@ -15,7 +15,7 @@ sections:
       primary_action:
         text: Comece aqui
         url: /CursoWesICC/docs/
-        icon: 🧬
+        icon: cursor-arrow-rays
       secondary_action:
         text: Sobre os autores
         url: /CursoWesICC/showcase/
