@@ -39,7 +39,7 @@ Exemplo:
 `AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ`
 
 
-[Artigo que sistematizou a estrutura do arquivo FASTQ](https://academic.oup.com/nar/article/38/6/1767/3112533)
+[Artigo que sistematizou a estrutura do arquivo FASTQ.](https://academic.oup.com/nar/article/38/6/1767/3112533)
 
 ### FastQC
 
@@ -48,6 +48,8 @@ O **FastQC** é uma ferramenta essencial para a análise inicial da qualidade de
 **Como funciona:**
 
 O FastQC analisa um ou mais arquivos FASTQ e produz um relatório HTML com gráficos e tabelas para cada uma das seguintes métricas:
+
+![FastQC](fastqc.png "Exemplo de relatório de qualidade gerado no FastQC a partir de um arquivo FASTQ.")
 
 - **Qualidade por Base (Per base sequence quality):**  
   Mostra a distribuição das pontuações de qualidade Phred em cada posição das leituras. Quedas na qualidade em determinadas posições (especialmente no final das leituras) são comuns e importantes de serem observadas.
@@ -96,11 +98,11 @@ O MultiQC é uma ferramenta que agrega e sumariza os relatórios de controle de 
 - **Suporte a Múltiplas Ferramentas:**  
   Além do FastQC, o MultiQC pode integrar resultados de outras etapas do pipeline, como o mapeamento (BWA-MEM), o processamento de BAM (SAMtools), e a chamada de variantes (GATK), fornecendo uma visão holística do controle de qualidade de todo o fluxo de trabalho.
 
-[Documentação detalhada do MultiQC](https://docs.seqera.io/multiqc)
+[Documentação detalhada do MultiQC.](https://docs.seqera.io/multiqc)
 
 {{% /steps %}}
 
-## Next
+## Próximo passo
 
 Let's customize your new site:
 
