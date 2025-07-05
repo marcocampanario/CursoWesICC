@@ -84,6 +84,8 @@ Embora o FastQC seja excelente para relatórios individuais, a análise de cente
 
 O MultiQC é uma ferramenta que agrega e sumariza os relatórios de controle de qualidade de múltiplas amostras, gerados por diversas ferramentas de bioinformática (incluindo FastQC, SAMtools, GATK, Trimmomatic, BWA, entre outras). Ele lê os arquivos de saída dessas ferramentas e os consolida em um único relatório HTML interativo.
 
+![MultiQC](multiqc.gif "Exemplo de relatório de qualidade gerado no MultiQC a partir de vários arquivos FASTQ.")
+
 **Vantagens do MultiQC:**
 
 - **Visão Geral Consolidada:**  
