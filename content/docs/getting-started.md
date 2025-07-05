@@ -12,7 +12,7 @@ weight: 1
 
 Um arquivo FASTQ é o formato padrão para armazenar sequências de leitura brutas de sequenciamento de nova geração (NGS), como as geradas por plataformas Illumina. Ele contém não apenas a sequência de nucleotídeos lida, mas também uma pontuação de qualidade para cada base, permitindo a avaliação da confiabilidade dos dados.
 
-![FASTQ](/CursoWesICC/assets/media/estrutura_fastq.png "Estrutura de um arquivo FASTQ.")
+![FASTQ](./assets/media/estrutura_fastq.png "Estrutura de um arquivo FASTQ.")
 
 ### Configure your new site
 
