@@ -10,20 +10,20 @@ design:
 sections:
   - block: hero
     content:
-      title: Write Docs Fast, Focus on Your Content
-      text: The easy, no-code technical documentation solution your users will love 🎉
+      title: Curso de Genômica Humana
+      text: Fundamentos da análise de dados de sequenciamento de exoma completo
       primary_action:
-        text: Get Started
-        url: https://hugoblox.com/templates/details/docs/
-        icon: rocket-launch
+        text: Comece aqui
+        url: /CursoWesICC/docs/
+        icon: dna
       secondary_action:
         text: Read the docs
-        url: /docs/
+        url: /CursoWesICC/docs/
       announcement:
-        text: "Announcing the release of version 2."
+        text: "Para download dos datasets de estudo."
         link:
-          text: "Read more"
-          url: "/blog/"
+          text: "Clique aqui"
+          url: "/CursoWesICC/blog/"
     design:
       spacing:
         padding: [0, 0, 0, 0]

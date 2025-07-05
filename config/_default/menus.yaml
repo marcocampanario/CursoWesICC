@@ -5,13 +5,13 @@ main:
   - name: Home
     url: /
     weight: 10
-  - name: Documentation
+  - name: Práticas
     url: docs/
     weight: 20
-  - name: Blog
+  - name: Datasets
     url: blog/
     weight: 30
-  - name: Showcase
+  - name: Autores
     url: showcase/
     weight: 40
   - name: Community
