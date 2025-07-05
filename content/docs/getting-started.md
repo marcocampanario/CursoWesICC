@@ -1,16 +1,18 @@
 ---
-title: Getting Started
+title: Revisão teórica
 date: 2024-02-17
 weight: 1
 ---
 
-## Quick Start from Template
+## Controle de Qualidade Pré-mapeamento
 
 {{% steps %}}
 
-### Initialize a new site
+### Arquivos FASTQ
 
-[Click to copy the template on GitHub](https://github.com/new?template_name=theme-documentation&template_owner=HugoBlox)
+Um arquivo FASTQ é o formato padrão para armazenar sequências de leitura brutas de sequenciamento de nova geração (NGS), como as geradas por plataformas Illumina. Ele contém não apenas a sequência de nucleotídeos lida, mas também uma pontuação de qualidade para cada base, permitindo a avaliação da confiabilidade dos dados.
+
+![FASTQ](/assets/media/estrutura_fastq.png "Estrutura de um arquivo FASTQ.")
 
 ### Configure your new site
 
