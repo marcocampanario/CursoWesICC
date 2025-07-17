@@ -90,7 +90,7 @@ if ("ANNOVAR_ExonicFunc.refGene" %in% colnames(vcf_df)) {
       grepl("stopgain", ANNO
 ```
 
-### 02: Abrir a interface gráfica do servidor (X2GO) e executar o software RStudio
+### 02: Executar o software RStudio na interface gráfica X2GO
 
 …
 

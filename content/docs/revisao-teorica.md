@@ -163,6 +163,58 @@ Anotadores, como exemplo o ANNOVAR, podem agregar informações de contexto gen�
 
 {{% /steps %}}
 
+## Visualizando dados com a linguagem R
+
+{{% steps %}}
+
+### O que é a Linguagem R?
+
+R é uma linguagem de programação e um ambiente de software livre, amplamente utilizado para computação estatística e gráficos. É uma ferramenta poderosa para:
+
+- **Processamento de Dados**: Importar, limpar, transformar e organizar grandes conjuntos de dados.
+- **Análise Estatística**: Realizar uma vasta gama de análises estatísticas, desde testes simples a modelos complexos.
+- **Visualização de Dados**: Criar gráficos de alta qualidade para explorar e apresentar resultados de forma eficaz.
+
+### Por que R na Bioinformática?
+
+No contexto da bioinformática, R é ideal para:
+
+- Processar e analisar dados de sequenciamento (genômica, transcriptômica, etc.).
+- Realizar análises de expressão diferencial.
+- Interpretar e visualizar resultados de anotação de variantes genéticas.
+- Desenvolver modelos preditivos para características biológicas ou doenças.
+- Realizar análises estatísticas.
+
+### O que é RStudio?
+
+Enquanto R é a linguagem e o ambiente de execução, o RStudio é um Ambiente de Desenvolvimento Integrado (IDE) que facilita a escrita, execução e depuração de códigos R. Pense nele como uma "central de comando" que torna a experiência com R muito mais amigável e produtiva.
+
+Principais funcionalidades do RStudio:
+
+- **Editor de Código**: Onde você escreve e edita seus scripts R. Oferece recursos como realce de sintaxe e autocompletar.
+- **Console**: Onde os comandos R são executados e os resultados são exibidos.
+- **Ambiente**: Mostra todos os objetos (variáveis, dados, funções) que você criou na sessão atual.
+- **Arquivos, Plots, Pacotes, Ajuda, Viewer**: Painéis dedicados para gerenciar arquivos, visualizar gráficos gerados, instalar e carregar pacotes, acessar a documentação e pré-visualizar arquivos HTML.
+
+### Programação com Pacotes em R
+
+Uma das maiores forças do R é sua vasta coleção de **pacotes**. Um pacote é um conjunto de funções, dados e documentação pré-escritos que estendem as capacidades básicas do R.
+
+**Como funcionam os pacotes**:
+
+1. **Instalação**: Antes de usar um pacote pela primeira vez, você precisa instalá-lo. Isso geralmente é feito com o comando `install.packages("nome_do_pacote")`. Pense nisso como "baixar" uma nova ferramenta para sua caixa de ferramentas R.
+1. **Carregamento**: Após a instalação, para usar as funções de um pacote em uma sessão R, você precisa "carregá-lo" usando o comando `library(nome_do_pacote)`. Isso torna as funções do pacote disponíveis para uso.
+1. **Uso**: Uma vez carregado, você pode chamar as funções do pacote diretamente em seu script.
+
+**Exemplos de pacotes comuns e suas aplicações na bioinformática**:
+
+- **`dplyr`**: Essencial para manipulação e transformação de dados (filtrar, selecionar, agrupar, etc.).
+- **`ggplot2`**: O pacote padrão e mais robusto para a criação de gráficos estatísticos de alta qualidade e altamente personalizáveis.
+- **`vcfR`**: Específico para bioinformática, permite ler, manipular e visualizar arquivos VCF (Variant Call Format).
+- **`stringr`**: Facilita a manipulação de strings (textos), útil para extrair informações de anotações de variantes.
+
+Ao utilizar pacotes, você não precisa "reinventar a roda" para cada tarefa. A comunidade R já desenvolveu e disponibilizou ferramentas otimizadas para diversas finalidades, permitindo que você se concentre na análise e interpretação dos seus dados.
+
 ## Próximo passo
 
 Agora que revisamos os fundamentos das métricas de qualidade de arquivos de sequenciamento de DNA, siga para a prática:
