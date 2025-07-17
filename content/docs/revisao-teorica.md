@@ -109,5 +109,5 @@ O MultiQC é uma ferramenta que agrega e sumariza os relatórios de controle de 
 Agora que revisamos os fundamentos das métricas de qualidade de arquivos de sequenciamento de DNA, siga para a prática:
 
 {{< cards >}}
-  {{< card url="../guide/_index" title="Mão na Massa!" icon="document-duplicate" >}}
+  {{< card url="../guide/" title="Mão na Massa!" icon="document-duplicate" >}}
 {{< /cards >}}

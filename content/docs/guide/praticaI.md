@@ -3,57 +3,79 @@ title: Prática I
 weight: 1
 ---
 
-## Folder Structure
+## Análise de arquivos FASTQ
 
-There are **4 main folders for Hugo-based sites**:
+Nesta seção prática, vamos utilizar as ferramentas FastQC e MultiQC para analisar a qualidade de arquivos FASTQ de exemplo.
 
-- `content/` for your Markdown-formatted content files (homepage, etc.)
-  - `_index.md` the homepage (**Hugo requires that the homepage and archive pages have an underscore prefix**)
-- `assets/`
-  - `media/` for your media files (images, videos)
-    - `icons/custom/` upload any custom SVG icons you want to use
-- `config/_default/` for your site configuration files
-  - `hugo.yaml` to configure Hugo (site title, URL, Hugo options, setup per-folder page features)
-  - `module.yaml` to install or uninstall Hugo themes and plugins
-  - `params.yaml` to configure Hugo Blox options (SEO, analytics, site features)
-  - `menus.yaml` to configure your menu links (if the menu is enabled in `params.yaml`)
-  - `languages.yaml` to configure your site's language or to set language-specific options in a multilingual site
-- `static/uploads/` for any files you want visitors to download, such as a PDF
-- `go.mod` sets the version of Hugo themes/plugins which your site uses
+Os arquivos FASTQ estão localizados no diretório `~/data/fastq/` no servidor.
+
+**Objetivos**:
+
+- Gerar relatórios de qualidade para arquivos FASTQ individuais usando FastQC.
+- Consolidar múltiplos relatórios FastQC em um único relatório interativo usando MultiQC.
+- Interpretar os resultados para identificar potenciais problemas de qualidade.
 
 
-## Hugo File Naming Convention
+## Passo-a-passo
 
-Hugo gives us two options to name standard page files: as `TITLE/index.md` or `TITLE.md` where `TITLE` is your page name.
+### 01: Navegar até o diretório dos arquivos FASTQ
 
-The page name should be lowercase and using hyphens (`-`) instead of spaces.
+Primeiro, acesse o diretório onde seus arquivos FASTQ estão armazenados.
 
-Both approaches result in the same output, so you can choose your preferred approach to naming and organizing files. A benefit to the folder-based approach is that all your page's files (such as images) are self-contained within the page's folder, so it's more portable if you wish to share the original Markdown page with someone.
+```yaml
+cd ~/data/fastq/
+```
 
-The homepage is a special case as **Hugo requires the homepage and listing pages to be named** `_index.md`.
+### 02: Executar FastQC para cada arquivo FASTQ
 
-## Docs Navigation
+Para cada arquivo FASTQ, execute o FastQC individualmente. O FastQC criará um arquivo `.html` e um arquivo `.zip` para cada FASTQ no mesmo diretório.
 
-The docs navigation is automatically generated based on the content in the `docs/` folder and is sorted alphabetically.
-
-The order of pages can be changed by adding the `weight` parameter in the front matter of your Markdown files.
-
-In the example below, the `example.md` page will appear before the `test.md` page as it has a lower `weight`:
+```yaml
+cd ~/data/fastq/
+```
 
 Page `example.md`:
 
 ```yaml
----
-title: My Example
-weight: 1
----
+fastqc sample1.fastq.gz
 ```
-
-Page `test.md`:
 
 ```yaml
----
-title: My Test
-weight: 2
----
+fastqc sample2.fastq.gz
 ```
+
+```yaml
+# Repita para todos os arquivos FASTQ que você deseja analisar!
+```
+
+### 03: Executar MultiQC para consolidar os relatórios
+
+Após executar o FastQC para todos os seus arquivos, execute o MultiQC no diretório que contém os resultados do FastQC (os arquivos `.html` ou `.zip` gerados). O MultiQC irá procurar automaticamente pelos arquivos de saída do FastQC e gerar um relatório consolidado.
+
+```yaml
+multiqc .
+```
+
+- **Observação**: O ponto `.` indica que o MultiQC deve procurar pelos arquivos de resultados no diretório atual. Se seus arquivos FastQC estiverem em um subdiretório específico, você pode especificar o caminho (ex: `multiqc ./fastqc_results/`).
+
+### 04: Visualizar o relatório MultiQC
+
+O MultiQC gerará um arquivo chamado `multiqc_report.html` no diretório onde foi executado. Você precisará transferir este arquivo para o seu computador local (usando `fpt` ou FileZilla, por exemplo) e abri-lo em um navegador web para interagir com o relatório.
+
+### 05: Interpretação dos Resultados:
+
+Ao abrir o `multiqc_report.html` no seu navegador, você verá um dashboard interativo. Preste atenção nas seguintes seções:
+
+- *General Statistics*: Fornece um resumo de alto nível para cada amostra.
+
+- *FastQC: Per Base Sequence Quality*: Verifique se a qualidade das bases se mantém alta ao longo da leitura. Quedas abruptas, especialmente no final, podem indicar a necessidade de corte de reads.
+
+- *FastQC: Per Sequence Quality Scores*: Observe a distribuição das pontuações de qualidade médias. Idealmente, a maioria das leituras deve ter alta qualidade.
+
+- *FastQC: Adapter Content*: Garanta que a quantidade de adaptadores seja mínima ou ausente. A presença de adaptadores indica a necessidade de remoção (usando ferramentas como Trimmomatic).
+
+- *FastQC: Sequence Duplication Levels*: Níveis muito altos de duplicação podem sugerir super-amplificação por PCR e podem impactar a profundidade de cobertura real.
+
+- *FastQC: Per Base GC Content*: Compare o conteúdo de GC com o esperado para o organismo. Desvios podem indicar contaminação.
+
+Os relatórios do MultiQC são interativos. Você pode clicar nas seções para expandir os gráficos, passar o mouse sobre os pontos de dados para obter mais informações e usar as opções de filtragem para visualizar subconjuntos de amostras.
