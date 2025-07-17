@@ -110,10 +110,53 @@ O MultiQC é uma ferramenta que agrega e sumariza os relatórios de controle de 
 
 ### Depois do FASTQ [...] Antes do VCF
 
-Após o controle de qualidade dos arquivos FASTQ, os dados de sequenciamento são mapeados em um genoma humano de referência (GRCh38 / HG38 ou GRCh37/HG19), tornando-se arquivos SAM (Sequence Alignment Map) que contém as informações sobre a qualidade dos mapeamentos de leituras.
+Após o controle de qualidade dos arquivos FASTQ, os dados de sequenciamento são mapeados em um genoma humano de referência (GRCh38 / HG38 ou GRCh37/HG19), tornando-se arquivos SAM (*Sequence Alignment Map*) que contém as informações sobre a qualidade dos mapeamentos de leituras.
 
 ![SAM](sam.jpg "Estrutura de um arquivo SAM.")
 
+Devido ao grande volume de dados ocupado por esse formato, transforma-se e trabalha-se com sua versão binária BAM (*Binary Alignment Map*), para todas as etapas de controle de qualidade pós mapeamento que antecedem a chamada e genotipagem de variantes genéticas.
+
+Após a chamada de variantes genéticas e genotipagem conjunta (*joint calling*), as variações genotípicas em divergência com o genoma de referência são anotadas no padrão do formato VCF (*Variant Call Format*).
+
+### Arquivo VCF
+
+É o formato padrão para armazenar informações sobre variantes genéticas (SNPs, INDELs e outras).
+
+![VCF](vcf.png "Estrutura de um arquivo VCF.")
+
+#### Colunas Essenciais do formato VCF
+
+- **CHROM**: Cromossomo onde a variante está localizada.
+- **POS**: Posição inicial da variante no cromossomo.
+- **ID**: Identificador da variante (ex: rsID do dbSNP, se disponível).
+- **REF**: Alelo de referência na posição.
+- **ALT**: Alelo(s) alternativo(s) observado(s).
+- **QUAL**: Escore de qualidade Phred para a chamada da variante.
+- **FILTER**: Indicação se a variante passou pelos filtros de qualidade.
+- **INFO**: Campo de informações adicionais sobre a variante (densamente anotado).
+- **FORMAT**: Define a ordem e o tipo de dados para cada amostra.
+- **Colunas de Amostras**: Contêm os genótipos e outros dados específicos da amostra.
+
+#### Interpretação dos Genótipos
+
+- 0/0 - Homozigoto para o alelo de referência.
+- 0/1 - Heterozigoto (um alelo de referência e um alelo alternativo).
+- 1/1 - Homozigoto para o alelo alternativo.
+- ./. - Genótipo não chamado (leituras insuficientes ou de baixa qualidade).
+
+#### Campo INFO
+
+Contém as diversas anotações sobre cada variante, como:
+
+- **QD (Quality by Depth)**: Escore de qualidade normalizado pela profundidade de cobertura.
+- **FS (FisherStrand)**: Escore para viés de strand.
+- **MQ (MappingQuality)**: Qualidade de mapeamento das leituras de suporte.
+
+Anotadores, como o ANNOVAR, podem agregar informações de contexto genômico ao campo INFO do VCF:
+
+- Anotações funcionais: gene, tipo de variante genética, mudança de aminoácido (caso *missense*), etc.
+- Frequências populacionais (gnomAD, 1000 Genomes, ABraOM).
+- Classificações de patogenicidade (ClinVar, REVEL, CADD).
 
 
 {{% /steps %}}
