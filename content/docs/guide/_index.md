@@ -7,5 +7,5 @@ sidebar:
 
 {{< cards >}}
   {{< card url="praticaI" title="Prática I" icon="document-duplicate" >}}
-  {{< card url="configuration" title="Configuration" icon="adjustments-vertical" >}}
+  {{< card url="praticaII" title="Prática II" icon="document-duplicate" >}}
 {{< /cards >}}
