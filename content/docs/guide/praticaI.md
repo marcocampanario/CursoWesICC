@@ -66,16 +66,16 @@ O MultiQC gerará um arquivo chamado `multiqc_report.html` no diretório onde fo
 
 Ao abrir o `multiqc_report.html` no seu navegador, você verá um dashboard interativo. Preste atenção nas seguintes seções:
 
-- *General Statistics*: Fornece um resumo de alto nível para cada amostra.
+- **General Statistics**: Fornece um resumo de alto nível para cada amostra.
 
-- *FastQC: Per Base Sequence Quality*: Verifique se a qualidade das bases se mantém alta ao longo da leitura. Quedas abruptas, especialmente no final, podem indicar a necessidade de corte de reads.
+- **FastQC: Per Base Sequence Quality**: Verifique se a qualidade das bases se mantém alta ao longo da leitura. Quedas abruptas, especialmente no final, podem indicar a necessidade de corte de reads.
 
-- *FastQC: Per Sequence Quality Scores*: Observe a distribuição das pontuações de qualidade médias. Idealmente, a maioria das leituras deve ter alta qualidade.
+- **FastQC: Per Sequence Quality Scores**: Observe a distribuição das pontuações de qualidade médias. Idealmente, a maioria das leituras deve ter alta qualidade.
 
-- *FastQC: Adapter Content*: Garanta que a quantidade de adaptadores seja mínima ou ausente. A presença de adaptadores indica a necessidade de remoção (usando ferramentas como Trimmomatic).
+- **FastQC: Adapter Content**: Garanta que a quantidade de adaptadores seja mínima ou ausente. A presença de adaptadores indica a necessidade de remoção (usando ferramentas como Trimmomatic).
 
-- *FastQC: Sequence Duplication Levels*: Níveis muito altos de duplicação podem sugerir super-amplificação por PCR e podem impactar a profundidade de cobertura real.
+- **FastQC: Sequence Duplication Levels**: Níveis muito altos de duplicação podem sugerir super-amplificação por PCR e podem impactar a profundidade de cobertura real.
 
-- *FastQC: Per Base GC Content*: Compare o conteúdo de GC com o esperado para o organismo. Desvios podem indicar contaminação.
+- **FastQC: Per Base GC Content**: Compare o conteúdo de GC com o esperado para o organismo. Desvios podem indicar contaminação.
 
 Os relatórios do MultiQC são interativos. Você pode clicar nas seções para expandir os gráficos, passar o mouse sobre os pontos de dados para obter mais informações e usar as opções de filtragem para visualizar subconjuntos de amostras.
