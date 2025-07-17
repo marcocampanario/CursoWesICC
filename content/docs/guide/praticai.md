@@ -54,9 +54,13 @@ fastqc sample2.fastq.gz
 
 Após executar o FastQC para todos os seus arquivos, execute o MultiQC no diretório que contém os resultados do FastQC (os arquivos `.html` ou `.zip` gerados). O MultiQC irá procurar automaticamente pelos arquivos de saída do FastQC e gerar um relatório consolidado.
 
+{{% steps %}}
+
 ```yaml
 multiqc .
 ```
+
+{{% /steps %}}
 
 - **Observação**: O ponto `.` indica que o MultiQC deve procurar pelos arquivos de resultados no diretório atual. Se seus arquivos FastQC estiverem em um subdiretório específico, você pode especificar o caminho (ex: `multiqc ./fastqc_results/`).
 
