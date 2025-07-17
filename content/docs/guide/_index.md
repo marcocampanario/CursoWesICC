@@ -6,6 +6,6 @@ sidebar:
 ---
 
 {{< cards >}}
-  {{< card url="praticaI" title="Prática I" icon="document-duplicate" >}}
-  {{< card url="praticaII" title="Prática II" icon="document-duplicate" >}}
+  {{< card url="pratica1" title="Prática I" icon="document-duplicate" >}}
+  {{< card url="pratica2" title="Prática II" icon="document-duplicate" >}}
 {{< /cards >}}

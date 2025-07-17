@@ -104,6 +104,20 @@ O MultiQC é uma ferramenta que agrega e sumariza os relatórios de controle de 
 
 {{% /steps %}}
 
+## Explorando e Interpretando Arquivos VCF
+
+{{% steps %}}
+
+### Depois do FASTQ [...] Antes do VCF
+
+Após o controle de qualidade dos arquivos FASTQ, os dados de sequenciamento são mapeados em um genoma humano de referência (GRCh38 / HG38 ou GRCh37/HG19), tornando-se arquivos SAM (Sequence Alignment Map) que contém as informações sobre a qualidade dos mapeamentos de leituras.
+
+![SAM](sam.jpg "Estrutura de um arquivo SAM.")
+
+
+
+{{% /steps %}}
+
 ## Próximo passo
 
 Agora que revisamos os fundamentos das métricas de qualidade de arquivos de sequenciamento de DNA, siga para a prática:
