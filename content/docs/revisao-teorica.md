@@ -215,6 +215,8 @@ Uma das maiores forças do R é sua vasta coleção de **pacotes**. Um pacote é
 
 Ao utilizar pacotes, você não precisa "reinventar a roda" para cada tarefa. A comunidade R já desenvolveu e disponibilizou ferramentas otimizadas para diversas finalidades, permitindo que você se concentre na análise e interpretação dos seus dados.
 
+{{% /steps %}}
+
 ## Próximo passo
 
 Agora que revisamos os fundamentos das métricas de qualidade de arquivos de sequenciamento de DNA, siga para a prática:
