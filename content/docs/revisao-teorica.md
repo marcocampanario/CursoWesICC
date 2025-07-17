@@ -139,10 +139,10 @@ Após a chamada de variantes genéticas e genotipagem conjunta (*joint calling*)
 
 #### Interpretação dos Genótipos
 
-- 0/0 - Homozigoto para o alelo de referência.
-- 0/1 - Heterozigoto (um alelo de referência e um alelo alternativo).
-- 1/1 - Homozigoto para o alelo alternativo.
-- ./. - Genótipo não chamado (leituras insuficientes ou de baixa qualidade).
+- **0/0** - Homozigoto para o alelo de referência.
+- **0/1** - Heterozigoto (um alelo de referência e um alelo alternativo).
+- **1/1** - Homozigoto para o alelo alternativo.
+- **./.** - Genótipo não chamado (leituras insuficientes ou de baixa qualidade).
 
 #### Campo INFO
 
@@ -152,11 +152,13 @@ Contém as diversas anotações sobre cada variante, como:
 - **FS (FisherStrand)**: Escore para viés de strand.
 - **MQ (MappingQuality)**: Qualidade de mapeamento das leituras de suporte.
 
-Anotadores, como o ANNOVAR, podem agregar informações de contexto genômico ao campo INFO do VCF:
+#### Anotadores
 
-- Anotações funcionais: gene, tipo de variante genética, mudança de aminoácido (caso *missense*), etc.
-- Frequências populacionais (gnomAD, 1000 Genomes, ABraOM).
-- Classificações de patogenicidade (ClinVar, REVEL, CADD).
+Anotadores, como exemplo o ANNOVAR, podem agregar informações de contexto genômico ao campo INFO do VCF:
+
+- **Anotações funcionais**: gene, tipo de variante genética, mudança de aminoácido (caso *missense*), etc.
+- **Frequências populacionais** (gnomAD, 1000 Genomes, ABraOM).
+- **Classificações de patogenicidade** (ClinVar, REVEL, CADD).
 
 
 {{% /steps %}}

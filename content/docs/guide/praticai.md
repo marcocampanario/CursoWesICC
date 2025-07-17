@@ -30,11 +30,11 @@ cd ~/data/fastq/
 
 Para cada arquivo FASTQ, execute o FastQC individualmente. O FastQC criará um arquivo `.html` e um arquivo `.zip` para cada FASTQ no mesmo diretório.
 
+{{% steps %}}
+
 ```yaml
 cd ~/data/fastq/
 ```
-
-Page `example.md`:
 
 ```yaml
 fastqc sample1.fastq.gz
@@ -47,6 +47,8 @@ fastqc sample2.fastq.gz
 ```yaml
 # Repita para todos os arquivos FASTQ que você deseja analisar!
 ```
+
+{{% /steps %}}
 
 ### 03: Executar MultiQC para consolidar os relatórios
 

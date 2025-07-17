@@ -7,8 +7,6 @@ title: Sobre o curso
 
 <!--more-->
 
-This site is a demo of the Hugo Blox Documentation theme. For the full documentation on how to use this template, refer to the [Hugo Blox Documentation](https://docs.hugoblox.com/).
-
 ## Próximo passo
 
 {{< cards >}}
