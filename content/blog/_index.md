@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: Datasets
 view: date-title-summary
 url: /blog/
 ---
