@@ -1,9 +1,9 @@
 ---
-title: v1.0.0 Released!
-summary: Hugo v1.0.0 released. Download now and follow the guide to get started in 5 minutes!
+title: v1.0.0 Datasets Curso Genômica Humana - Julho/2025
+summary: Faça o download agora e siga o roteiro de práticas!
 date: 2025-07-01
 authors:
-  - admin
+  - Marco Campanário
 tags:
   - Hugo
   - Hugo Blox
