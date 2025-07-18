@@ -1,5 +1,5 @@
 ---
-title: v1.0.0 Datasets Curso Genômica Humana - Julho/2025
+title: v1.0.0 - Datasets Curso Genômica Humana - Julho/2025
 summary: Faça o download agora e siga o roteiro de práticas!
 date: 2025-07-01
 authors:
@@ -9,7 +9,7 @@ tags:
   - Hugo Blox
   - Markdown
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
+  caption: 'Image credit: [**ICC Fiocruz Paraná**](https://www.posgraduacao.icc.fiocruz.br/)'
 ---
 
 Hugo v1.0.0 is now available! This release includes new experimental features to try out, improvements to accessibility, the ability for plugins to customize image optimization in Markdown, and many more improvements and bug fixes.
