@@ -41,8 +41,8 @@ header:
       filename: "logo.png"
     button:
       enable: true
-      text: "Get Started"
-      url: "https://hugoblox.com/templates/details/docs/"
+      text: "Programação Curso de Inverno ICC 2025"
+      url: "https://www.icc.fiocruz.br/curso-de-inverno/"
     show_search: true
     show_theme_chooser: true
 
