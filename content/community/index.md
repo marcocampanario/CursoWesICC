@@ -14,7 +14,7 @@ Abaixo estão alguns links úteis para quem tem curiosidade em Bioinformática e
 - [Color Scale for diff viz type](https://blog.datawrapper.de/which-color-scale-to-use-in-data-vis/)
 - [Data Vis with R - Book](https://rkabacoff.github.io/datavis/)
 
-## Ciência de Dados, Estatística e Aprendizado de Máquina :computer:
+## Ciência de Dados, Estatística e Aprendizado de Máquina
 
 - [Cool book on DS](https://mdsr-book.github.io/mdsr2e/)
 - [Stats for Biologists](https://www.nature.com/collections/qghhqm/pointsofsignificance)
@@ -50,7 +50,7 @@ Abaixo estão alguns links úteis para quem tem curiosidade em Bioinformática e
 
 - [Awesome Bioinf - A guide to almost everything in Bioinf](https://github.com/danielecook/Awesome-Bioinformatics#readme)
 
-### Análise de Dados de Sequenciamento de Exoma Completo :dna:
+### Análise de Dados de Sequenciamento de Exoma Completo
 - [Lucia Spangenberg's WES tutorial](https://pumped-whitefish-8f9.notion.site/Course-WES-Curitiba-2022-972517e4f0f44a45977388a4c5226bc6)
 - [Hugo Naya's WES/pop. genomics tutorial](https://blakngu.github.io/humanwes/)
 
@@ -66,16 +66,16 @@ Abaixo estão alguns links úteis para quem tem curiosidade em Bioinformática e
 
 ## R
 
-### Tidy* :package:
+### Tidy*
 - [Learn Tidyverse](https://www.tidyverse.org/learn/)
 - [Model with Tidy](https://www.tidymodels.org/)
 - [R4DS](https://r4ds.had.co.nz/)
 
-### Markdown :writing_hand:
+### Markdown
 - [Is it your first time using markdown? Check this short tutorial](https://commonmark.org/)
 - [Improve the Rmd skills](https://holtzy.github.io/Pimp-my-rmd/)
 - [Bookdown](https://www.bookdown.org/)
 - [Making your md pretty using Distill](https://iyo-rstudio-global.netlify.app/package/distill/)
 
-### Shiny :three_button_mouse:
+### Shiny
 - [Mastering Shiny](https://mastering-shiny.org/index.html)
