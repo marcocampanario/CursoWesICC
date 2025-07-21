@@ -41,7 +41,7 @@ header:
       filename: "logo.png"
     button:
       enable: true
-      text: "Programação Curso de Inverno ICC 2025"
+      text: "Programação"
       url: "https://www.icc.fiocruz.br/curso-de-inverno/"
     show_search: true
     show_theme_chooser: true
