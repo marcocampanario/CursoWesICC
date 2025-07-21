@@ -17,8 +17,8 @@ sections:
         url: /CursoWesICC/docs/
         icon: cursor-arrow-rays
       secondary_action:
-        text: Sobre os autores
-        url: /CursoWesICC/showcase/
+        text: Ementa
+        url: https://www.icc.fiocruz.br/wp-content/uploads/2025/06/1_Bioinform%C3%A1tica_B%C3%A1sica-.pdf
       announcement:
         text: "Para download dos datasets de estudo."
         link:
