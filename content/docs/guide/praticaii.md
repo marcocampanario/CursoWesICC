@@ -7,7 +7,7 @@ weight: 2
 
 Nesta seção prática, vamos utilizar estratégias de bioniformática para analisar arquivos VCF.
 
-Para isso, utilizaremos um arquivo VCF pequeno e anotado, contendo algumas variantes patogênicas e de significado incerto para fins de demonstração. Este arquivo está localizado em `~/data/variants/example.vcf.gz` no servidor.
+Para isso, utilizaremos um arquivo VCF pequeno e anotado, contendo algumas variantes patogênicas e de significado incerto para fins de demonstração. Este arquivo está localizado em `~/data/variants/mgp-hg38-anno.vcf` no servidor.
 
 
 **Objetivos**:
@@ -33,7 +33,7 @@ cd ~/data/variants/
 ```yaml
 # Descompactar o arquivo VCF de exemplo (se for .gz)
 
-gunzip -k example.vcf.gz 
+gunzip -k mgp-hg38-anno.vcf.gz 
 ```
 
 ```yaml
@@ -41,39 +41,40 @@ gunzip -k example.vcf.gz
 
 # As linhas com '##' são metadados, a linha com '#' define as colunas.
 
-head -n 50 example.vcf 
+head -n 50 mgp-hg38-anno.vcf 
 ```
 
 {{% /steps %}}
 
 ### 02: Inspecionar o Conteúdo do VCF com `grep` e `less`
 
-Vamos usar `less` para navegar pelo arquivo VCF e `grep` para buscar por variantes específicas ou filtrar por critérios simples.
+Vamos usar `less` para navegar pelo arquivo VCF e `grep` para buscar por variantes específicas ou filtrar por critérios simples. 
 
 {{% steps %}}
 
 ```yaml
 # Visualizar o arquivo VCF completo usando less (pressione 'q' para sair)
 
-less example.vcf
+less mgp-hg38-anno.vcf
 ```
 
 ```yaml
 # Procurar por variantes em um cromossomo específico (ex: chr1)
 
-grep -E '^#|chr1\t' example.vcf | less
+grep -E '^#|chr1\t' mgp-hg38-anno.vcf | less
 ```
 
 ```yaml
 # Procurar por variantes que passaram em todos os filtros (campo FILTER = PASS)
 
-grep -E '^#|PASS\t' example.vcf | less
+grep -E '^#|PASS\t' mgp-hg38-anno.vcf | less
+
 ```
 
 ```yaml
 # Procurar por uma variante com um ID específico (se houver, ex: rs12345)
 
-grep -E '^#|rs12345\t' example.vcf | less
+grep -E '^#|rs12345\t' mgp-hg38-anno.vcf | less
 ```
 
 {{% /steps %}}
@@ -93,15 +94,37 @@ bcftools view -H example.vcf | wc -l
 ```
 
 ```yaml
-# Filtrar variantes que são classificadas como "Pathogenic" ou "Likely_pathogenic" nas colunas de anotação 
+# Visualizar algumas métricas do arquivo VCF completo usando stats do bcftools, incluindo número total de variantes
+
+bcftools stats mgp-hg38-anno.vcf > stats.txt
+less stats.txt
+```
+
+```yaml
+# Filtrar variantes que são classificadas como "Pathogenic" ou "Likely Pathogenic" nas colunas de anotação 
 # (exemplo de anotação ClinVar)
 # NOTA: O nome exato da anotação no campo INFO ou em coluna específica pode variar dependendo da ferramenta de anotação 
 # (ex: ANN, ClinVar_CLNSIG)
-# Para este exemplo, usaremos uma anotação 'ClinVar_Significance'
+# Para este exemplo, usaremos uma anotação 'CLNSIG'
 # -i (ou --include): Indica que você quer incluir apenas as variantes que satisfazem a condição especificada
 # 
 
-bcftools view -i 'INFO/ClinVar_Significance="Pathogenic" | INFO/ClinVar_Significance="Likely_pathogenic"' example.vcf | less
+bcftools view -i 'INFO/CLNSIG="Pathogenic" | INFO/CLNSIG="Likely_pathogenic"' mgp-hg38-anno.vcf | less
+bcftools view -i 'INFO/CLNSIG="Pathogenic" | INFO/CLNSIG="Likely_pathogenic"' mgp-hg38-anno.vcf | bcftools stats > stats-pat.txt
+```
+
+```yaml
+# Extrair as métricas do arquivo VCF filtrado por cromossomo (ex: chr 1)
+
+grep -E '^#|chr1\t' mgp-hg38-anno.vcf | bcftools stats > stats-chr.txt
+
+# Extrair as métricas do arquivo VCF filtrado por qualidade (campo FILTER = PASS)
+
+grep -E '^#|PASS\t' mgp-hg38-anno.vcf | bcftools stats > stats-pass.txt
+
+# Extrair as métricas do arquivo VCF filtrado por rsID (se houver, ex: rs12345)
+
+grep -E '^#|rs12345\t' mgp-hg38-anno.vcf | bcftools stats > stats-rsID.txt
 ```
 
 ```yaml
