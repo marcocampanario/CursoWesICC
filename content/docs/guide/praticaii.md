@@ -140,11 +140,11 @@ less stats-rsID.txt
 
 # SNPs
 
-bcftools view -v mgp-hg38-anno.vcf | less
+bcftools view -v snps mgp-hg38-anno.vcf | less
 
 # INDELs
 
-bcftools view -v mgp-hg38-anno.vcf | less 
+bcftools view -v indels mgp-hg38-anno.vcf | less
 
 ```
 
