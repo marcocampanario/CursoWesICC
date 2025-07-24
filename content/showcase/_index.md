@@ -1,6 +1,6 @@
 ---
-title: Showcase
-description: "Docs websites powered by Hugo Blox."
+title: Autores
+description: "Autores."
 type: landing
 
 
@@ -8,15 +8,8 @@ type: landing
 sections:
   - block: hero
     content:
-      title: Get Inspirated
-      text: 'Get inspired by exploring sites #MadeWithHugoBlox'
-      primary_action:
-        icon: brands/x
-        text: Submit Your Site
-        url: "https://twitter.com/intent/tweet?text=I%27m%20creating%20a%20beautiful%20website%20using%20the%20free%20%E2%9D%A4%EF%B8%8F%2C%20open%20source%20Hugo%20Blox%20Website%20Builder%20for%20%40GoHugoIO%20by%20%40GeorgeCushen%20%40GetResearchDev%20%E2%9C%A8%20Have%20some%20feedback%3F%20Please%20comment%20%F0%9F%A4%97&hashtags=MadeWithHugoBlox&url=https://HugoBlox.com/"
-      secondary_action:
-        text: Explore More on HugoBlox.com
-        url: https://hugoblox.com/creators/
+      title: Autores
+      text: '[Marco Campanário](http://lattes.cnpq.br/3151326822304466) e [Bruno Janke](http://lattes.cnpq.br/4253753934855465).'
     design:
       no_padding: true
       spacing:
