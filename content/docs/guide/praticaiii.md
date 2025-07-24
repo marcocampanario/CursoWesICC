@@ -19,80 +19,128 @@ Nesta seção prática, vamos criar um script R para carregar o arquivo VCF, ext
 
 ### 01: Criar script R
 
-Abra o bloco de notas e salve o conteúdo abaixo como `analyze_vcf_annotations.R`:
+Abra o RStudio, copie e cole o conteúdo abaixo e salve como `praticaiii` (a extensão .R é automática).
 
 ```yaml
-# Instalar pacotes se necessário
-# install.packages("vcfR")
-# install.packages("ggplot2")
-# install.packages("dplyr")
-# install.packages("stringr")
-
-# Carregar pacotes
-library(vcfR)
-library(ggplot2)
 library(dplyr)
 library(stringr)
+library(tidyr)
+library(glue)
+library(ggplot2)
+library(scales)
 
-# --- Caminho para o arquivo VCF ---
+### Ctrl+Alt+H
+### Selecione a pasta com os arquivos da prática como seu diretório de trabalho
+getwd()
 
-vcf_file <- "~/data/variants/example.vcf"
+### PARTE 1: ORGANIZAÇÃO DOS DADOS
 
-# Verificar se o arquivo existe
-if (!file.exists(vcf_file)) {
-  stop("Arquivo VCF não encontrado. Verifique o caminho: ", vcf_file)
-}
+# Arquivo ANNOVAR .txt ---------------------------------------------------------
 
-# Carregar o arquivo VCF
-vcf <- read.vcfR(vcf_file, verbose = FALSE)
+vcf <- data.table::fread("mgp-hg38.txt", sep = "\t", quote = "")
 
-# Extrair informações do campo INFO (onde ANNOVAR e outras anotações estão)
-# Nota: O formato exato das anotações no campo INFO pode variar.
-# Para ANNOVAR, as anotações são frequentemente concatenadas e separadas por ponto e vírgula.
-# Este é um exemplo genérico; você pode precisar ajustar baseado no seu VCF.
+# Contar os tipos de variantes quanto à região ---------------------------------
 
-# Converta o VCF para um data.frame para facilitar a manipulação
-# Isso é uma forma simplificada, em um cenário real, você pode precisar parsing mais robusto do INFO
+tipo_var_regiao <- as.data.frame(table(vcf$Func.refGene))
 
-vcf_df <- vcfR2tidy(vcf) %>%
+# Selecionar variantes quanto à região -----------------------------------------
 
-  unnest_wider(c(Fix, Info)) %>% # Expande as colunas Fix e Info
+filt1 <- filter(vcf, Func.refGene == "exonic")
+filt2 <- filter(vcf, Func.refGene == "intronic")
+filt3 <- filter(vcf, Func.refGene == "splicing")
 
-  select(CHROM, POS, ID, REF, ALT, FILTER, starts_with("ANNOVAR"), # Inclua colunas de ANNOVAR
+# Contar os tipos de variantes quanto à patogenicidade -------------------------
 
-         starts_with("ClinVar"), # Inclua colunas de ClinVar
+tipo_var_patogenicidade <- as.data.frame(table(vcf$CLNSIG))
 
-         starts_with("gnomAD"), # Inclua colunas de gnomAD
+# Selecionar variantes quanto à patogenicidade ---------------------------------
 
-         starts_with("REVEL")) # Inclua colunas de REVEL
+filt4 <- filter(vcf, CLNSIG %in% c("Pathogenic", "Pathogenic/Likely_pathogenic", "Pathogenic/Likely_pathogenic/Pathogenic,_low_penetrance", "Pathogenic/Likely_pathogenic/Pathogenic,_low_penetrance|other", "Pathogenic/Pathogenic,_low_penetrance|other", "Likely_pathogenic"))
+filt5 <- filter(vcf, CLNSIG %in% c("Benign", "Benign/Likely_benign", "Likely_benign"))
+filt6 <- filter(vcf, CLNSIG %in% c("Uncertain_significance"))
 
+### PLOTS ----------------------------------------------------------------------
 
-# --- Exemplos de Análise e Plotagem ---
+### PARTE 2: VISUALIZAÇÃO DOS DADOS
 
-# 1. Distribuição de Variantes por Impacto Funcional (ANNOVAR)
+### PLOT - REGIAO FUNCIONAL
+# Garantir que os dados estão organizados
+tipo_var_regiao <- tipo_var_regiao %>%
+  rename(Regiao = Var1, Contagem = Freq) %>%
+  arrange(desc(Contagem))
 
-# Supondo que "ANNOVAR_Func.refGene" e "ANNOVAR_ExonicFunc.refGene" existam.
+# Criar gráfico de barras
+ggplot(tipo_var_regiao, aes(x = reorder(Regiao, -Contagem), y = Contagem)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  geom_text(aes(label = format(Contagem, big.mark = ".", decimal.mark = ",")), 
+            vjust = -0.5, size = 4) +
+  theme_minimal(base_size = 14) +
+  labs(
+    title = "Distribuição de variantes por região funcional",
+    x = "Região",
+    y = "Número de variantes"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_y_continuous(labels = label_number(big.mark = ".", decimal.mark = ","))
+### DÊ ZOOM E SALVE O GRÁFICO COMO "fig1"
 
-# Você pode precisar ajustar os nomes das colunas de acordo com o seu VCF.
+### PLOT - PATOGENICIDADE
+# Garantir que os dados estão organizados
+tipo_var_patogenicidade <- tipo_var_patogenicidade %>%
+  rename(Patogenicidade = Var1, Contagem = Freq) %>%
+  arrange(desc(Contagem))
 
-if ("ANNOVAR_ExonicFunc.refGene" %in% colnames(vcf_df)) {
+# Criar gráfico de barras
+ggplot(tipo_var_patogenicidade, aes(x = reorder(Patogenicidade, -Contagem), y = Contagem)) +
+  geom_bar(stat = "identity", fill = "tomato") +
+  geom_text(aes(label = format(Contagem, big.mark = ".", decimal.mark = ",")), 
+            vjust = -0.5, size = 4) +
+  theme_minimal(base_size = 14) +
+  labs(
+    title = "Distribuição de variantes por patogenicidade (CLNSIG)",
+    x = "Classificação",
+    y = "Número de variantes"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_y_continuous(labels = label_number(big.mark = ".", decimal.mark = ","))
+### DÊ ZOOM E SALVE O GRÁFICO COMO "fig2"
 
-  # Limpar e agrupar as funções exonicas para plotagem
+### PLOT - PATOGENICIDADE (excluindo não classificadas)
+# Garantir que os dados estão organizados
+tipo_var_patogenicidade_filtrado <- tipo_var_patogenicidade %>%
+  filter(!is.na(Patogenicidade) & Patogenicidade != ".") %>%
+  arrange(desc(Contagem))
 
-  functional_impact <- vcf_df %>%
+# Criar gráfico de barras
+ggplot(tipo_var_patogenicidade_filtrado, aes(x = reorder(Patogenicidade, -Contagem), y = Contagem)) +
+  geom_bar(stat = "identity", fill = "tomato") +
+  geom_text(aes(label = format(Contagem, big.mark = ".", decimal.mark = ",")), 
+            vjust = -0.5, size = 4) +
+  theme_minimal(base_size = 14) +
+  labs(
+    title = "Distribuição de variantes por patogenicidade (CLNSIG - somente classificadas)",
+    x = "Classificação",
+    y = "Número de variantes"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_y_continuous(labels = scales::label_number(big.mark = ".", decimal.mark = ","))
+### DÊ ZOOM E SALVE O GRÁFICO COMO "fig3"
 
-    filter(FILTER == "PASS") %>% # Apenas variantes que passaram nos filtros
+### EXCEL ----------------------------------------------------------------------
 
-    mutate(ExonicFunc = case_when(
+### PARTE 3: EXPLORAÇÃO DOS BANCOS DE DADOS PÚBLICOS
 
-      grepl("frameshift", ANNOVAR_ExonicFunc.refGene, ignore.case = TRUE) ~ "Frameshift",
+# Salvar o objeto filt4 como tabela .xlsx
+writexl::write_xlsx(filt4, "variantes_patogenicas.xlsx")
 
-      grepl("stopgain", ANNO
 ```
 
 ### 02: Executar o software RStudio na interface gráfica X2GO
 
-…
+Agora podemos trabalhar com o script em R.
 
-Descrever a execução por linha no RStúdio (Ctrl+Enter), pwd e setpwd
- Salvar plot e afins.
+#### Executar linha por linha
+- Para executar **uma linha ou uma seleção** do script:
+  - Clique na linha desejada (ou selecione o trecho).
+  - Pressione **Ctrl + Enter** (ou **Cmd + Enter** no Mac).
+  - O comando será executado no **Console**, que fica no painel inferior esquerdo.

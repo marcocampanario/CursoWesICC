@@ -132,11 +132,11 @@ grep -E '^#|rs12345\t' mgp-hg38-anno.vcf | bcftools stats > stats-rsID.txt
 
 # SNPs
 
-bcftools view -v snps example.vcf | less
+bcftools view -v mgp-hg38-anno.vcf | less
 
 # INDELs
 
-bcftools view -v indels example.vcf | less 
+bcftools view -v mgp-hg38-anno.vcf | less 
 
 ```
 
