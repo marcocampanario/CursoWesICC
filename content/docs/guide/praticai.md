@@ -37,11 +37,11 @@ cd ~/data/fastq/
 ```
 
 ```yaml
-fastqc sample1.fastq.gz
+fastqc Exoma001.fastq.gz
 ```
 
 ```yaml
-fastqc sample2.fastq.gz
+fastqc Exoma002.fastq.gz
 ```
 
 ```yaml
@@ -85,3 +85,9 @@ Ao abrir o `multiqc_report.html` no seu navegador, você verá um dashboard inte
 - **FastQC: Per Base GC Content**: Compare o conteúdo de GC com o esperado para o organismo. Desvios podem indicar contaminação.
 
 Os relatórios do MultiQC são interativos. Você pode clicar nas seções para expandir os gráficos, passar o mouse sobre os pontos de dados para obter mais informações e usar as opções de filtragem para visualizar subconjuntos de amostras.
+
+## Atividade 01
+
+- Considerando os 4 arquivos FASTQ analisados na prática, existe algum que você excluiria das análises subsequentes? Se sim, quais? Explique o porquê de manter ou excluir cada arquivo.
+
+- O relatório do MultiQC considera todos os arquivos FASTQC da pasta de trabalho para ser gerado. Como você faria para gerar um relatório MultiQC para os arquivos FASTQ de qualidade boa e outro para os arquivos FASTQ de qualidade ruim? 

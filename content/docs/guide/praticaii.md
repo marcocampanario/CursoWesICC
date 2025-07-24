@@ -90,7 +90,7 @@ O pacote de ferramentas `bcftools` é um poderoso aliado na exploração de arqu
 ```yaml
 # Contar o número total de variantes (excluindo linhas de cabeçalho)
 
-bcftools view -H example.vcf | wc -l
+bcftools view -H mgp-hg38-anno.vcf | wc -l
 ```
 
 ```yaml
@@ -111,20 +111,28 @@ less stats.txt
 
 bcftools view -i 'INFO/CLNSIG="Pathogenic" | INFO/CLNSIG="Likely_pathogenic"' mgp-hg38-anno.vcf | less
 bcftools view -i 'INFO/CLNSIG="Pathogenic" | INFO/CLNSIG="Likely_pathogenic"' mgp-hg38-anno.vcf | bcftools stats > stats-pat.txt
+less stats-pat.txt
+
+bcftools view -i 'INFO/Func.refGene="exonic"' mgp-hg38-anno.vcf | less
+bcftools view -i 'INFO/Func.refGene="exonic"' mgp-hg38-anno.vcf | bcftools stats > stats-exonic.txt
+less stats-exonic.txt
 ```
 
 ```yaml
 # Extrair as métricas do arquivo VCF filtrado por cromossomo (ex: chr 1)
 
-grep -E '^#|chr1\t' mgp-hg38-anno.vcf | bcftools stats > stats-chr.txt
+grep -E '^#|chr1\t' mgp-hg38-anno.vcf | bcftools stats > stats-chr1.txt
+less stats-chr1.txt
 
 # Extrair as métricas do arquivo VCF filtrado por qualidade (campo FILTER = PASS)
 
 grep -E '^#|PASS\t' mgp-hg38-anno.vcf | bcftools stats > stats-pass.txt
+less stats-pass.txt
 
 # Extrair as métricas do arquivo VCF filtrado por rsID (se houver, ex: rs12345)
 
 grep -E '^#|rs12345\t' mgp-hg38-anno.vcf | bcftools stats > stats-rsID.txt
+less stats-rsID.txt
 ```
 
 ```yaml
@@ -142,3 +150,14 @@ bcftools view -v mgp-hg38-anno.vcf | less
 
 {{% /steps %}}
 
+## Atividade 02
+
+- Quantas variantes genéticas foram chamadas ao todo nas amostras do VCF? Quantas amostras foram sequenciadas no projeto?
+
+- Quantos INDELs foram encontrados no projeto? E quantos SNVs?
+
+- Qual a taxa ti/tv (transições / transversões) média entre todas as variantes?
+
+- Quantas variantes genéticas são classificadas como patogênicas?
+
+- Qual a taxa ti/tv (transições / transversões) média entre as variantes genéticas classificadas como patogênicas? 

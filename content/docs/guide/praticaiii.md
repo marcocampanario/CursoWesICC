@@ -144,3 +144,11 @@ Agora podemos trabalhar com o script em R.
   - Clique na linha desejada (ou selecione o trecho).
   - Pressione **Ctrl + Enter** (ou **Cmd + Enter** no Mac).
   - O comando será executado no **Console**, que fica no painel inferior esquerdo.
+
+## Atividade 03
+
+- Considerando a classificação de posição funcional das variantes genéticas no genoma, qual o tipo de variante genética mais abundante entre as amostras sequenciadas?
+
+- E quanto à classificação de patogenicidade, qual o tipo de variante genética mais abundante?
+
+- Escolha uma variante genética classificada como patogênica e explore suas características no Ensembl e no UCSC Genome Browser.
