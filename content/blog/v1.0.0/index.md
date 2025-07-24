@@ -14,15 +14,15 @@ image:
 
 ## Arquivos para Atividade 01
 
-[FASTQ Exoma001](uploads/Exoma001.fastq.gz)
-[FASTQ Exoma002](uploads/Exoma002.fastq.gz)
-[FASTQ Exoma003](uploads/Exoma003.fastq.gz)
-[FASTQ Exoma004](uploads/Exoma004.fastq.gz)
+[FASTQ Exoma001](https://drive.google.com/uc?export=download&id=17XbpBjemtGhhmp8oQcmIL1dJKF9j8A1h)
+[FASTQ Exoma002](https://drive.google.com/uc?export=download&id=1S3fY2x1fIOee6mbAVCJkUfjvVZonk9Qd)
+[FASTQ Exoma003](https://drive.google.com/uc?export=download&id=1sogu0mKAYhZGZ7KQF49L9Y2dFnwydw20)
+[FASTQ Exoma004](https://drive.google.com/uc?export=download&id=1AfPfWri5dh8MrBz9X4iR6wQDlJ0MHw8h)
 
 ## Arquivos para Atividade 02 e 03
 
-[VCF Multiamostra](uploads/mgp-hg38-anno.vcf.gz)
-[TXT Multianotação](uploads/mgp-hg38-anno.vcf.gz)
+[VCF Multiamostra](https://drive.google.com/uc?export=download&id=15FJcsAxdOdjGBp8ogDX8brJHFe6X6pII)
+[TXT Multianotação](https://drive.google.com/uc?export=download&id=1PkarqGRYE9FbY19I2UDZoSv4_CFo05Ra)
 
 ## How to Upgrade
 
