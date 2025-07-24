@@ -4,10 +4,6 @@ summary: Faça o download agora e siga o roteiro de práticas!
 date: 2025-07-01
 authors:
   - Marco Campanário
-tags:
-  - Hugo
-  - Hugo Blox
-  - Markdown
 image:
   caption: 'Image credit: [**ICC Fiocruz Paraná**](https://www.posgraduacao.icc.fiocruz.br/)'
 ---
