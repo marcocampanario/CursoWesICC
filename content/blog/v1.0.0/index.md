@@ -12,23 +12,17 @@ image:
   caption: 'Image credit: [**ICC Fiocruz Paraná**](https://www.posgraduacao.icc.fiocruz.br/)'
 ---
 
-Hugo v1.0.0 is now available! This release includes new experimental features to try out, improvements to accessibility, the ability for plugins to customize image optimization in Markdown, and many more improvements and bug fixes.
+## Arquivos para Atividade 01
 
-Highlights include:
+[FASTQ Exoma001](uploads/Exoma001.fastq.gz)
+[FASTQ Exoma002](uploads/Exoma002.fastq.gz)
+[FASTQ Exoma003](uploads/Exoma003.fastq.gz)
+[FASTQ Exoma004](uploads/Exoma004.fastq.gz)
 
-- New config options
-- Improved accessibility
-- Customizable image optimization in Markdown
+## Arquivos para Atividade 02 e 03
 
-Thank you to everyone who contributed to this release!
-
-## New Features
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae fringilla sem. Integer mattis dictum augue non auctor. Proin quis porttitor enim. Praesent vulputate arcu egestas scelerisque condimentum. Vivamus elit risus, suscipit et enim et, viverra molestie elit. Nulla ullamcorper nisl vel nisi pellentesque, id feugiat risus interdum. Duis consequat ipsum elit. Aenean hendrerit diam ipsum, a convallis magna congue et. Sed ex erat, pretium et ante id, malesuada luctus nibh. Nunc nec consectetur elit.
-
-## Bug Fixes
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae fringilla sem. Integer mattis dictum augue non auctor. Proin quis porttitor enim. Praesent vulputate arcu egestas scelerisque condimentum. Vivamus elit risus, suscipit et enim et, viverra molestie elit. Nulla ullamcorper nisl vel nisi pellentesque, id feugiat risus interdum. Duis consequat ipsum elit. Aenean hendrerit diam ipsum, a convallis magna congue et. Sed ex erat, pretium et ante id, malesuada luctus nibh. Nunc nec consectetur elit.
+[VCF Multiamostra](uploads/mgp-hg38-anno.vcf.gz)
+[TXT Multianotação](uploads/mgp-hg38-anno.vcf.gz)
 
 ## How to Upgrade
 
