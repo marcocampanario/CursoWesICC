@@ -151,4 +151,4 @@ Agora podemos trabalhar com o script em R.
 
 - E quanto à classificação de patogenicidade, qual o tipo de variante genética mais abundante?
 
-- Escolha uma variante genética classificada como patogênica e explore suas características no Ensembl e no UCSC Genome Browser.
+- Escolha uma variante genética classificada como patogênica e explore suas características no [Ensembl](https://www.ensembl.org/index.html) e no [UCSC Genome Browser](https://genome.ucsc.edu/). Lembre-se, todas as variantes genéticas conhecidas possuem rsID no [dbSNP](https://www.ncbi.nlm.nih.gov/snp/).
