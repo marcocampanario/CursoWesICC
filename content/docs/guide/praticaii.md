@@ -27,13 +27,13 @@ Antes de tudo, vamos descompactar o arquivo VCF de exemplo e inspecionar seu cab
 ```yaml
 # Navegar até o diretório das variantes
 
-cd ~/data/variants/
+cd /home/USERNAME/Desktop/quarta/vcf
 ```
 
 ```yaml
 # Descompactar o arquivo VCF de exemplo (se for .gz)
 
-gunzip -k mgp-hg38-anno.vcf.gz 
+bcftools view -O z -o mgp-hg38-anno.vcf.gz mgp-hg38-anno.vcf
 ```
 
 ```yaml

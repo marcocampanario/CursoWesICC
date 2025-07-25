@@ -23,7 +23,7 @@ Os arquivos FASTQ estão localizados no diretório `~/data/fastq/` no servidor.
 Primeiro, acesse o diretório onde seus arquivos FASTQ estão armazenados.
 
 ```yaml
-cd ~/data/fastq/
+cd /home/USERNAME/Desktop/quarta/fastq
 ```
 
 ### 02: Executar FastQC para cada arquivo FASTQ
@@ -31,10 +31,6 @@ cd ~/data/fastq/
 Para cada arquivo FASTQ, execute o FastQC individualmente. O FastQC criará um arquivo `.html` e um arquivo `.zip` para cada FASTQ no mesmo diretório.
 
 {{% steps %}}
-
-```yaml
-cd ~/data/fastq/
-```
 
 ```yaml
 fastqc Exoma001.fastq.gz
