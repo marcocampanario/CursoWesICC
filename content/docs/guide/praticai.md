@@ -28,7 +28,7 @@ cd /home/USERNAME/Desktop/curso_de_inverno/quarta/fastq
 
 ### 02: Executar FastQC para cada arquivo FASTQ
 
-Para cada arquivo FASTQ, execute o FastQC individualmente. O FastQC criará um arquivo `.html` e um arquivo `.zip` para cada FASTQ no mesmo diretório.
+Para cada arquivo FASTQ, execute o FastQC individualmente. O FastQC criará um arquivo <code>.html</code> e um arquivo <code>.zip</code> para cada FASTQ no mesmo diretório.
 
 {{% steps %}}
 

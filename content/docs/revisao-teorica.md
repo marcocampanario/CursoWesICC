@@ -22,14 +22,14 @@ Cada leitura em um arquivo FASTQ é composta por quatro linhas:
 Começa com `@` seguido por um identificador único da leitura (ex: ID do instrumento, número da corrida, coordenadas no *flowcell*).  
 
 ```text
-Exemplo:  
+#Exemplo:  
 @M02568:1:000000000-A227B:1:1101:17540:2009 1:N:0:1
 ```
 **2. Linha da Sequência:**  
 Contém a sequência de nucleotídeos (A, T, C, G e N para bases incertas).  
 
 ```text
-Exemplo:  
+#Exemplo:  
 GTTTCCCCTCGCTGCGAAGGGCCGTCCGAGCGAAGCCGCAGGGTTTCAGCCATGGC
 ```
 
@@ -37,14 +37,14 @@ GTTTCCCCTCGCTGCGAAGGGCCGTCCGAGCGAAGCCGCAGGGTTTCAGCCATGGC
 Começa com `+` e pode opcionalmente repetir o identificador da leitura. Geralmente, é usada apenas para separar a sequência da linha de qualidade.  
 
 ```text
-Exemplo:  
-`+`
+#Exemplo:  
++
 ```
 **4. Linha de Qualidade (Phred Score):**  
 Contém uma string de caracteres ASCII que representam a pontuação de qualidade Phred para cada base na linha de sequência correspondente. Uma pontuação mais alta indica uma maior confiança na base.  
 
 ```text
-Exemplo:  
+#Exemplo:  
 AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
 ```
 
