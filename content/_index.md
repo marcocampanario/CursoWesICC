@@ -5,7 +5,7 @@ type: landing
 
 design:
   # Default section spacing
-  spacing: "6rem"
+  spacing: "3rem"
 
 sections:
   - block: hero
@@ -18,7 +18,7 @@ sections:
         icon: cursor-arrow-rays
       secondary_action:
         text: Ementa
-        url: https://www.icc.fiocruz.br/wp-content/uploads/2025/06/1_Bioinform%C3%A1tica_B%C3%A1sica-.pdf
+        url: https://www.icc.fiocruz.br/wp-content/uploads/2026/07/Edital_Curso_Inverno_2026_JWF_v02.pdf
       announcement:
         text: "Para download dos datasets de estudo."
         link:

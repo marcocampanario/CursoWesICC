@@ -14,7 +14,7 @@ marketing:
     site_type: Project
     local_business_type: ''
     org_name: ''
-    description: 'Roteiro de práticas do Curso de Genômica Humana do Curso de Inverno do ICC 2025.'
+    description: 'Roteiro de práticas do Curso de Genômica Humana do Curso de Inverno do ICC.'
     twitter: 'GetResearchDev'
   analytics:
     google_analytics: ''
@@ -38,7 +38,7 @@ header:
     logo:
       text: ""
       # Logo filename in `assets/media/` folder
-      filename: "logo.png"
+      filename: "logo-lab.png"
     button:
       enable: true
       text: "Programação"
@@ -49,7 +49,7 @@ header:
 # Site footer
 footer:
   copyright:
-    notice: '© {year} [Marco Campanário](https://marcocampanario.github.io/) e [Bruno Janke](http://lattes.cnpq.br/4253753934855465). Esse curso está licenciado sob {license}'
+    notice: '© {year} [Marco Campanário](https://marcocampanario.github.io/), [Bruno Janke](http://lattes.cnpq.br/4253753934855465) e [Sophia Ozório](https://lattes.cnpq.br/3423997570502660). Esse curso está licenciado sob {license}'
     license:
       enable: true
       allow_derivatives: false

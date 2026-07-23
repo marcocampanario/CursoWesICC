@@ -20,20 +20,20 @@ Para isso, utilizaremos um arquivo VCF pequeno e anotado, contendo algumas varia
 
 ### 01: Descomprimir um Arquivo VCF e Visualizar seu Cabeçalho
 
-Antes de tudo, vamos descompactar o arquivo VCF de exemplo e inspecionar seu cabeçalho. O cabeçalho VCF contém metadados importantes sobre o pipeline de chamada de variantes e as ferramentas de anotação usadas.
+Antes de tudo, vamos descomprimir o arquivo VCF de exemplo e inspecionar seu cabeçalho. O cabeçalho VCF contém metadados importantes sobre o pipeline de chamada de variantes e as ferramentas de anotação usadas.
 
 {{% steps %}}
 
 ```yaml
 # Navegar até o diretório das variantes
 
-cd /home/USERNAME/Desktop/quarta/vcf
+cd /home/USERNAME/Desktop/curso_de_inverno/quarta/vcf
 ```
 
 ```yaml
-# Descompactar o arquivo VCF de exemplo (se for .gz)
+# Descomprimir o arquivo VCF de exemplo (se for .gz)
 
-bcftools view -O z -o mgp-hg38-anno.vcf.gz mgp-hg38-anno.vcf
+bcftools view -O v -o mgp-hg38-anno.vcf mgp-hg38-anno.vcf.gz
 ```
 
 ```yaml
@@ -61,20 +61,20 @@ less mgp-hg38-anno.vcf
 ```yaml
 # Procurar por variantes em um cromossomo específico (ex: chr1)
 
-grep -E '^#|chr1\t' mgp-hg38-anno.vcf | less
+grep -P '^#|chr1\t' mgp-hg38-anno.vcf | less
 ```
 
 ```yaml
 # Procurar por variantes que passaram em todos os filtros (campo FILTER = PASS)
 
-grep -E '^#|PASS\t' mgp-hg38-anno.vcf | less
+grep -P '^#|PASS\t' mgp-hg38-anno.vcf | less
 
 ```
 
 ```yaml
 # Procurar por uma variante com um ID específico (se houver, ex: rs12345)
 
-grep -E '^#|rs12345\t' mgp-hg38-anno.vcf | less
+grep -P '^#|rs12345\t' mgp-hg38-anno.vcf | less
 ```
 
 {{% /steps %}}
@@ -117,6 +117,25 @@ bcftools view -i 'INFO/Func.refGene="exonic"' mgp-hg38-anno.vcf | less
 bcftools view -i 'INFO/Func.refGene="exonic"' mgp-hg38-anno.vcf | bcftools stats > stats-exonic.txt
 less stats-exonic.txt
 ```
+{{% /steps %}}
+
+## Atividade 02
+
+- Quantas variantes genéticas foram chamadas ao todo nas amostras do VCF? Quantas amostras foram sequenciadas no projeto?
+
+- Quantos INDELs foram encontrados no projeto? E quantos SNVs?
+
+- Qual a taxa ti/tv (transições / transversões) média entre todas as variantes?
+
+- Quantas variantes genéticas são classificadas como patogênicas?
+
+- Qual a taxa ti/tv (transições / transversões) média entre as variantes genéticas classificadas como patogênicas? 
+
+## Extra
+
+Algumas dicas extras na hora de analisar nosso VCF:
+
+{{% steps %}}
 
 ```yaml
 # Extrair as métricas do arquivo VCF filtrado por cromossomo (ex: chr 1)
@@ -149,15 +168,3 @@ bcftools view -v indels mgp-hg38-anno.vcf | less
 ```
 
 {{% /steps %}}
-
-## Atividade 02
-
-- Quantas variantes genéticas foram chamadas ao todo nas amostras do VCF? Quantas amostras foram sequenciadas no projeto?
-
-- Quantos INDELs foram encontrados no projeto? E quantos SNVs?
-
-- Qual a taxa ti/tv (transições / transversões) média entre todas as variantes?
-
-- Quantas variantes genéticas são classificadas como patogênicas?
-
-- Qual a taxa ti/tv (transições / transversões) média entre as variantes genéticas classificadas como patogênicas? 

@@ -29,7 +29,7 @@ library(glue)
 library(ggplot2)
 library(scales)
 
-### Ctrl+Alt+H
+### Ctrl+Shift+H
 ### Selecione a pasta com os arquivos da prática como seu diretório de trabalho
 getwd()
 

@@ -23,7 +23,7 @@ Os arquivos FASTQ estão localizados no diretório `~/data/fastq/` no servidor.
 Primeiro, acesse o diretório onde seus arquivos FASTQ estão armazenados.
 
 ```yaml
-cd /home/USERNAME/Desktop/quarta/fastq
+cd /home/USERNAME/Desktop/curso_de_inverno/quarta/fastq
 ```
 
 ### 02: Executar FastQC para cada arquivo FASTQ

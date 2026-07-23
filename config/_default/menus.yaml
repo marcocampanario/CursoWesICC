@@ -6,16 +6,16 @@ main:
     url: /
     weight: 10
   - name: Práticas
-    url: docs/
+    url: /docs/
     weight: 20
   - name: Datasets
-    url: blog/
+    url: /blog/
     weight: 30
   - name: Autores
-    url: showcase/
+    url: /showcase/
     weight: 40
   - name: Referências
-    url: community/
+    url: /community/
     weight: 50
 
 sidebar:
@@ -29,6 +29,6 @@ sidebar:
     pageRef: "/community"
     weight: 2
   - identifier: hugoDocs
-    name: "Curso de Inverno ICC 2025 ↗"
+    name: "Curso de Inverno ICC ↗"
     url: "https://www.icc.fiocruz.br/curso-de-inverno/"
     weight: 3
