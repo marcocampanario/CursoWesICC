@@ -17,7 +17,7 @@ sections:
         url: /CursoWesICC/docs/
         icon: cursor-arrow-rays
       secondary_action:
-        text: Ementa
+        text: Edital
         url: https://www.icc.fiocruz.br/wp-content/uploads/2026/07/Edital_Curso_Inverno_2026_JWF_v02.pdf
       announcement:
         text: "Para download dos datasets de estudo."
