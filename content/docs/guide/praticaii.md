@@ -27,7 +27,7 @@ Antes de tudo, vamos descomprimir o arquivo VCF de exemplo e inspecionar seu cab
 ```yaml
 # Navegar até o diretório das variantes
 
-cd /home/USERNAME/Desktop/quarta/vcf
+cd /home/$USER/Desktop/alunos/'NOME_DE_VOCES'/quarta/vcf
 ```
 
 ```yaml
@@ -74,7 +74,7 @@ grep -P '^#|PASS\t' mgp-hg38-anno.vcf | less
 ```yaml
 # Procurar por uma variante com um ID específico (se houver, ex: rs12345)
 
-grep -P '^#|rs12345\t' mgp-hg38-anno.vcf | less
+grep -P '^#|rs749471528' mgp-hg38-anno.vcf | less
 ```
 
 {{% /steps %}}
