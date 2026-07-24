@@ -27,7 +27,7 @@ Antes de tudo, vamos descomprimir o arquivo VCF de exemplo e inspecionar seu cab
 ```yaml
 # Navegar até o diretório das variantes
 
-cd /home/USERNAME/Desktop/curso_de_inverno/quarta/vcf
+cd /home/USERNAME/Desktop/quarta/vcf
 ```
 
 ```yaml
