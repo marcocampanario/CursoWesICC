@@ -22,6 +22,10 @@ Nesta seção prática, vamos criar um script R para carregar o arquivo VCF, ext
 Abra o RStudio, copie e cole o conteúdo abaixo e salve como `praticaiii` (a extensão .R é automática).
 
 ```yaml
+#install.packages("dplyr")
+#install.packages("writexl")
+
+library(writexl)
 library(dplyr)
 library(stringr)
 library(tidyr)
