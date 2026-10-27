@@ -9,4 +9,5 @@ sidebar:
   {{< card url="praticai" title="Prática I" icon="document-duplicate" >}}
   {{< card url="praticaii" title="Prática II" icon="document-duplicate" >}}
   {{< card url="praticaiii" title="Prática III" icon="document-duplicate" >}}
+  {{< card url="pratica-linux" title="Prática Linux" icon="command-line" >}}
 {{< /cards >}}
