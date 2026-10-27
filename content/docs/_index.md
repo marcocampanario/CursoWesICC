@@ -21,8 +21,9 @@ title: Sobre o curso
   {{< card url="https://marcocampanario.github.io/CursoWesICC/docs/guide/praticaiii" title="Prática III" icon="document-duplicate" >}}
 {{< /cards >}}
 
-## Instalando WSL
+## Prática Linux
 
 {{< cards >}}
   {{< card url="https://learn.microsoft.com/pt-br/windows/wsl/install" title="Instalando WSL" icon="command-line" subtitle="Guia oficial da Microsoft para instalar o Subsistema do Windows para Linux (WSL)." >}}
+  {{< card url="https://marcocampanario.github.io/CursoWesICC/aula_linux.zip" title="Arquivos da aula" icon="arrow-down-tray" subtitle="Baixe os arquivos utilizados na prática de Linux." >}}
 {{< /cards >}}
