@@ -86,4 +86,63 @@ Os relatórios do MultiQC são interativos. Você pode clicar nas seções para 
 
 - Considerando os 4 arquivos FASTQ analisados na prática, existe algum que você excluiria das análises subsequentes? Se sim, quais? Explique o porquê de manter ou excluir cada arquivo.
 
-- O relatório do MultiQC considera todos os arquivos FASTQC da pasta de trabalho para ser gerado. Como você faria para gerar um relatório MultiQC para os arquivos FASTQ de qualidade boa e outro para os arquivos FASTQ de qualidade ruim? 
+- O relatório do MultiQC considera todos os arquivos FASTQC da pasta de trabalho para ser gerado. Como você faria para gerar um relatório MultiQC para os arquivos FASTQ de qualidade boa e outro para os arquivos FASTQ de qualidade ruim?
+
+## Roteiro Aula EPB - Dia 2 (28/10/2026)
+
+### Instalação FastQC
+
+{{% steps %}}
+
+\`\`\`bash
+sudo apt-get update
+sudo apt-get install python3-pip
+sudo apt update
+sudo apt install fastqc -y
+fastqc --version
+\`\`\`
+
+{{% /steps %}}
+
+### Instalação MultiQC
+
+{{% steps %}}
+
+\`\`\`bash
+sudo apt install pipx -y
+pipx ensurepath
+pipx install multiqc
+multiqc --version
+\`\`\`
+
+{{% /steps %}}
+
+### Prática 1
+
+Na pasta criada com os arquivos \`.fastq\` baixados (\`Exoma001\`, \`Exoma002\`, \`Exoma003\`, \`Exoma004\`):
+
+{{% steps %}}
+
+\`\`\`bash
+fastqc Exoma001.fastq.gz
+fastqc Exoma002.fastq.gz
+fastqc Exoma003.fastq.gz
+fastqc Exoma004.fastq.gz
+\`\`\`
+
+{{% /steps %}}
+
+Arquivos \`.fastqc.zip\` serão gerados para cada \`.fastq\`, junto com o relatório \`.html\`.
+
+Na pasta com os arquivos \`fastqc.zip\`:
+
+{{% steps %}}
+
+\`\`\`bash
+multiqc .
+\`\`\`
+
+{{% /steps %}}
+
+Será gerada a pasta \`multiqc_data/\` e o relatório \`multiqc_report.html\`.
+
