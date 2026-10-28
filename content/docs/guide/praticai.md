@@ -94,13 +94,13 @@ Os relatórios do MultiQC são interativos. Você pode clicar nas seções para 
 
 {{% steps %}}
 
-\`\`\`bash
+```bash
 sudo apt-get update
 sudo apt-get install python3-pip
 sudo apt update
 sudo apt install fastqc -y
 fastqc --version
-\`\`\`
+```
 
 {{% /steps %}}
 
@@ -108,41 +108,41 @@ fastqc --version
 
 {{% steps %}}
 
-\`\`\`bash
+```bash
 sudo apt install pipx -y
 pipx ensurepath
 pipx install multiqc
 multiqc --version
-\`\`\`
+```
 
 {{% /steps %}}
 
 ### Prática 1
 
-Na pasta criada com os arquivos \`.fastq\` baixados (\`Exoma001\`, \`Exoma002\`, \`Exoma003\`, \`Exoma004\`):
+Na pasta criada com os arquivos `.fastq` baixados (`Exoma001`, `Exoma002`, `Exoma003`, `Exoma004`):
 
 {{% steps %}}
 
-\`\`\`bash
+```bash
 fastqc Exoma001.fastq.gz
 fastqc Exoma002.fastq.gz
 fastqc Exoma003.fastq.gz
 fastqc Exoma004.fastq.gz
-\`\`\`
+```
 
 {{% /steps %}}
 
-Arquivos \`.fastqc.zip\` serão gerados para cada \`.fastq\`, junto com o relatório \`.html\`.
+Arquivos `.fastqc.zip` serão gerados para cada `.fastq`, junto com o relatório `.html`.
 
-Na pasta com os arquivos \`fastqc.zip\`:
+Na pasta com os arquivos `fastqc.zip`:
 
 {{% steps %}}
 
-\`\`\`bash
+```bash
 multiqc .
-\`\`\`
+```
 
 {{% /steps %}}
 
-Será gerada a pasta \`multiqc_data/\` e o relatório \`multiqc_report.html\`.
+Será gerada a pasta `multiqc_data/` e o relatório `multiqc_report.html`.
 
