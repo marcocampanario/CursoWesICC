@@ -17,6 +17,105 @@ Nesta seção prática, vamos criar um script R para carregar o arquivo VCF, ext
 
 ## Passo-a-passo
 
+### 01: Introdução ao R
+
+Abra o RStudio, copie e cole o conteúdo abaixo e salve como `intro_R` (a extensão .R é automática).
+
+```yaml
+# Linhas iniciadas por # são comentários
+
+# O R funciona como uma calculadora
+2 + 3
+10 / 2
+
+# Mostrar o diretório de trabalho atual
+getwd()
+
+# Criar um objeto
+numero_variantes <- 6
+
+# Consultar seu conteúdo
+numero_variantes
+
+# Criar um vetor com regiões funcionais
+regioes <- c("exonic", "intronic", "exonic",
+             "splicing", "intronic", "exonic")
+
+# Contar os elementos do vetor
+length(regioes)
+
+# Acessar o primeiro elemento
+regioes[1]
+
+# Criando um dataframe
+vcf_exemplo <- data.frame(
+  Func.refGene = regioes,
+  CLNSIG = c("Pathogenic", "Benign", "Uncertain_significance",
+             "Likely_pathogenic", "Benign", ".")
+)
+
+# Mostrar as primeiras linhas
+head(vcf_exemplo)
+
+# Mostrar os nomes das colunas
+names(vcf_exemplo)
+
+# Contar as linhas
+nrow(vcf_exemplo)
+
+# Acessar uma coluna pelo nome
+vcf_exemplo$Func.refGene
+
+# Quais linhas possuem variantes exônicas?
+vcf_exemplo$Func.refGene == "exonic"
+
+# Criar uma tabela contendo somente variantes exônicas
+exonicas_exemplo <- subset(
+  vcf_exemplo,
+  Func.refGene == "exonic"
+)
+
+exonicas_exemplo
+
+# Quais linhas possuem uma destas classificações?
+vcf_exemplo$CLNSIG %in% c("Pathogenic", "Likely_pathogenic")
+
+# Contar variantes por região
+contagem_regiao_exemplo <- table(vcf_exemplo$Func.refGene)
+
+contagem_regiao_exemplo
+
+# Transformar a contagem em um data.frame
+resumo_regiao_exemplo <- as.data.frame(contagem_regiao_exemplo)
+
+resumo_regiao_exemplo
+
+# Contar variantes por classificação
+table(vcf_exemplo$CLNSIG)
+
+
+#####
+
+install.packages("writexl")
+install.packages("dplyr")
+install.packages("stringr")
+install.packages("tidyr")
+install.packages("glue")
+install.packages("ggplot2")
+install.packages("scales")
+install.packages("data.table")
+
+
+library(writexl)
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(glue)
+library(ggplot2)
+library(scales)
+
+```
+
 ### 01: Criar script R
 
 Abra o RStudio, copie e cole o conteúdo abaixo e salve como `praticaiii` (a extensão .R é automática).
@@ -32,6 +131,7 @@ library(tidyr)
 library(glue)
 library(ggplot2)
 library(scales)
+library(data.table)
 
 ### Ctrl+Shift+H
 ### Selecione a pasta com os arquivos da prática como seu diretório de trabalho
@@ -136,6 +236,28 @@ ggplot(tipo_var_patogenicidade_filtrado, aes(x = reorder(Patogenicidade, -Contag
 
 # Salvar o objeto filt4 como tabela .xlsx
 writexl::write_xlsx(filt4, "variantes_patogenicas.xlsx")
+
+# Criar objeto com variantes comuns
+variantes_comuns <- vcf %>%
+  mutate(AF = as.numeric(na_if(as.character(AF), "."))) %>%
+  filter(!is.na(AF), AF > 0.05) %>%
+  filter(Func.refGene == "exonic")
+
+# Conferir quantas variantes atendem ao critério
+nrow(variantes_comuns)
+
+# Fixar a semente para reproduzir o mesmo sorteio
+set.seed(555)
+
+# Sortear 100 linhas sem reposição, mantendo todas as colunas
+variantes_comuns_100 <- variantes_comuns %>%
+  slice_sample(n = 100, replace = FALSE)
+
+# Exportar para Excel no diretório de trabalho atual
+writexl::write_xlsx(
+  variantes_comuns_100,
+  "variantes_comuns.xlsx"
+)
 
 ```
 
