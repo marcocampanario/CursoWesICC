@@ -17,7 +17,7 @@ Nesta seção prática, vamos criar um script R para carregar o arquivo VCF, ext
 
 ## Passo-a-passo
 
-### 01: Introdução ao R
+### 00: Introdução ao R
 
 Abra o RStudio, copie e cole o conteúdo abaixo e salve como `intro_R` (a extensão .R é automática).
 
